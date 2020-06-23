@@ -5,7 +5,10 @@ https://arxiv.org/abs/1606.03476
 [[file:./images/screenshot-02.png]]
 
 
-#+BEGIN_SRC python :tangle 'GAIL.py' :noweb yes
+#+BEGIN_SRC python :tangle yes :noweb yes
+import torch
+import numpy as np
+
 def main(args):
     <<initialise-parameters>>
     for i in range(100):
@@ -24,7 +27,12 @@ if __name__ == '__main__':
 :END:
 
 #+BEGIN_SRC python
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument('expert', help='path to expert model ("./data/walker_expert.pt")')
+
+args = parser.parse_args()
 #+END_SRC
 
 * Initialise Algorithm
@@ -32,8 +40,9 @@ if __name__ == '__main__':
 :header-args: :noweb-ref initialise-parameters
 :END:
 
+Generate the expert trajectories \(\tau_E \sim \pi_E\):
 #+BEGIN_SRC python
-
+all_trajectories = torch.load(args.expert)
 #+END_SRC
 
 * Sample Trajectories
@@ -42,7 +51,7 @@ if __name__ == '__main__':
 :END:
 
 #+BEGIN_SRC python
-
+...
 #+END_SRC
 
 * Update the Discriminator
