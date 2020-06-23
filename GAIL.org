@@ -1,1 +1,64 @@
 #+TITLE: GAIL: Generative Adversarial Imitation Learning
+
+https://arxiv.org/abs/1606.03476
+
+[[file:./images/screenshot-02.png]]
+
+
+#+BEGIN_SRC python :tangle 'GAIL.py' :noweb yes
+def main(args):
+    <<initialise-parameters>>
+    for i in range(100):
+        <<sample-trajectories>>
+        <<update-discriminator>>
+        <<update-policy>>
+
+if __name__ == '__main__':
+    <<parse-args>>
+    main(args)
+#+END_SRC
+
+* Parse Arguments
+:PROPERTIES:
+:header-args: :noweb-ref parse-args
+:END:
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+* Initialise Algorithm
+:PROPERTIES:
+:header-args: :noweb-ref initialise-parameters
+:END:
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+* Sample Trajectories
+:PROPERTIES:
+:header-args: :noweb-ref sample-trajectories
+:END:
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+* Update the Discriminator
+:PROPERTIES:
+:header-args: :noweb-ref update-discriminator
+:END:
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+* Update the Policy
+:PROPERTIES:
+:header-args: :noweb-ref update-policy
+:END:
+
+#+BEGIN_SRC python
+
+#+END_SRC
